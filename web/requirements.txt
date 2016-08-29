@@ -1,1 +1,2 @@
 Flask==0.11
+Scrapy==1.1

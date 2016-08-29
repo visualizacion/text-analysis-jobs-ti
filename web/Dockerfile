@@ -1,7 +1,11 @@
-FROM ubuntu:latest
-MAINTAINER Rajdeep Dua "dua_rajdeep@yahoo.com"
-RUN apt-get update -y
-RUN apt-get install -y python-pip python-dev build-essential
+FROM debian:wheezy
+MAINTAINER Andrew Huynh <andrew@productbio.com>
+RUN apt-get update && apt-get install -y \
+            python-dev python-pip python-setuptools \
+            libffi-dev libxml2-dev libxslt1-dev \
+            libtiff4-dev libjpeg8-dev zlib1g-dev libfreetype6-dev \
+            liblcms2-dev libwebp-dev tcl8.5-dev tk8.5-dev python-tk
+
 COPY . /app
 WORKDIR /app
 RUN pip install -r requirements.txt
